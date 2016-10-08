@@ -1,0 +1,206 @@
+// Card Grid --------------------------------
+.cardgrid {
+  @include clearfix;
+  width: 30%;
+  max-width: 120px;
+
+  ul {
+    @include horizontal-list;
+
+    li {
+      display: inline-block;
+
+      img {
+        width: 50px;
+        height: 25px;
+        margin: .2rem;
+      } // img
+    } // li
+  } // ul
+} // cardgrid
+
+// Webinar --------------------------------
+.webinar {
+  @include clearfix;
+  @include single-transition(all, .5s, ease-in);
+  @include border-radius(15px);
+  width: 100%;
+  // max-width: 500px;
+  height: 300px;
+  background: $placeholder;
+  margin: auto;
+  margin-bottom: 40px;
+  text-align: center;
+  line-height: 300px;
+
+  a {
+    display: block;
+    font-size: 2.2rem;
+    font-weight: lighter;
+
+    &:hover {
+      background: $pantonePurple;
+      opacity: .6;
+      color: #fff;
+    } // a:hover
+  } // a
+} // webinar
+
+// Tiffany Image ---------------------------
+#tiffanyImage {
+    display: block;
+    width: 60%;
+    height: auto;
+    max-width: 400px;
+    max-height: 400px;
+    margin: auto;
+    margin-bottom: 50px;
+} // tiffanyImage
+
+// Story Container -----------------------------
+.storycontainer {
+  width: 100%;
+
+  img {
+    display: block;
+    width: 250px;
+    margin: auto;
+  }
+
+  .story-header {
+    @include border-radius(15px);
+    background: $pantoneBlue;
+    padding: 25px;
+    color: $pantonePurple;
+    font-weight: bold;
+    line-height: 110%;
+    font-size: 1.5rem;
+  } // story-header
+
+  .story-content {
+    @include border-radius(15px);
+    background: $pantoneBlue;
+    min-height: 240px;
+    padding: 20px 30px;
+    padding-top: 10px;
+    margin-top: -25px;
+    margin-bottom: 40px;
+    line-height: 110%;
+
+    p {
+      color: $pantonePurple;
+      font-size: 1.2rem;
+    } // p
+
+    a {
+      color: $pantoneBlue;
+      text-decoration: underline;
+      font-size: 1rem;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+
+    img {
+      display: block;
+      width: 200px;
+      height: auto;
+      margin-bottom: 20px;
+    } // img
+  } // story-content
+
+  @include at-breakpoint($medium) {
+    @include single-transition(all, 1s, ease-in);
+    width: 70%;
+    margin: auto;
+
+    img.right {
+      float: right;
+      margin-left: 20px;
+    } // right
+
+    img.left {
+      float: left;
+      margin-right: 20px;
+    } // left
+  } // medium
+
+  @include at-breakpoint($large) {
+    width: 60%;
+  }
+} // storycontainer
+
+// Circle ---------------------------------
+.circle {
+  @include border-radius(50%);
+}
+
+// Round Square ---------------------------
+.roundSquare {
+  @include border-radius(15px);
+}
+
+// Arrow ----------------------------------
+.arrow {
+  width: 15px;
+  height: 75px;
+  background: $pantoneBlue;
+  margin: auto;
+}
+
+// Contact --------------------------------
+.contact {
+
+  .contact-form {
+    margin: auto;
+    justify-content: center;
+
+    p {
+      line-height: 130%;
+      font-size: .8rem;
+    } // p
+
+    .rectangle {
+      @include border-radius(15px);
+      width: 100%;
+      max-width: 700px;
+      line-height: 180%;
+      font-size: 1.2rem;
+      font-family: $font-secondary;
+      padding: 8px 16px;
+      margin-top: 10px;
+      background: lighten($pantoneYellow, .8);
+      border-style: none;
+      color: $pantonePurple;
+
+      @include input-placeholder {
+        color: $pantonePurple;
+      } // input-placeholder
+    } // rectangle
+
+    #message {
+      height: auto;
+      min-height: 300px;
+    } // message
+
+    #send {
+      width: 40%;
+      max-width: 200px;
+      float: right;
+    } // send
+  } // contact
+
+  @include at-breakpoint($medium) {
+    @include single-transition(all, 1s, ease-in);
+    width: 50%;
+    margin: auto;
+    justify-content: center;
+    vertical-align: middle;
+
+    .contact-form {
+      width: 500px;
+      margin: auto;
+    }
+  }
+}
