@@ -4,21 +4,27 @@ JavaScript basics assignments for my students
 
 #Assignment 5 -- Due October 13, 2016
 
-This is a JavaScript 101 assignment where you have complete creative freedom. That also means you have to design a simple user interface that has some interactive elements. Theme your "visual art installation" from your favorite movie, book, singer, or any other insterests. For instance you can spoil movies for us, make an animated cartoon character, pose a trivia question, etc.
+This is a JavaScript 101 assignment where you have complete creative freedom. 
+That also means you have to design a simple user interface that has some interactive elements. 
+Theme your "visual art installation" from your favorite movie, book, singer, or any other insterests. 
+For instance you can spoil movies for us, make an animated cartoon character, pose a trivia question, etc.
 
 You need not make a big website, just make sure you follow these steps:
 
 Fork my Github repo for javascript_basics. -- Done
-Work inside the folder 01_Hello_World by editing the index.html file. 
-You can add your own files if necessary. 
+Work inside the folder 01_Hello_World by editing the index.html file. -- Done
+You can add your own files if necessary. -- Done 
 Open the index file in any browser to visualize your HTML and JS code.
 
-Use a JS framework like jQuery, Bootstrap, etc. 
-Make sure you include them from a CDN in the <script> tag.
+Use a JS framework like jQuery, Bootstrap, etc. -- Bootstrap -- Done
+Make sure you include them from a CDN in the <script> tag. -- Done
 
 Define one or more JS functions that do something visible to page elements;
  such as moving things around, adding new text, etc. 
- You must use a variable and an array, and include a for-loop somewhere.
+ You must use a 
+ variable 
+ and an array, 
+ and include a for-loop somewhere.
  
 Add some buttons or other interactive component - 
 you MUST use the resources from the framework. 

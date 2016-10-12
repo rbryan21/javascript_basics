@@ -25,26 +25,41 @@
     <!-- Your page here (can include more script tags) -->
 
     <div class="jumbotron text-center">
-        <h1>My First Bootstrap Page</h1>
+        <h1>TRS-80 Color Computer</h1>
         <p>Resize this responsive page to see the effect!</p>
     </div>
 
     <div class="container">
         <div class="row">
             <div class="col-sm-4">
-                <h3>Column 1</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+                <h3>My First Computer</h3>
+                <p><a href="https://en.wikipedia.org/wiki/TRS-80_Color_Computer">Wikipedia TRS-80</a></p>
+
+                <div class="dropdown open">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Select a Coco Model
+                    </button>
+                    <select id="computerDropDown" onchange="setPicture();"></select>
+                    <script src="second.js" type="text/javascript"></script>
+                </div>
+
+                <p><img id="computerCocoImage"  src="300px-TRS-80_Color_Computer_1_front_right.jpg" width="300"></p>
+                <p><a href="Color Computer 3 Extended Basic (Tandy).pdf">Tandy Owner Manual</a></p>
             </div>
             <div class="col-sm-4">
-                <h3>Column 2</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+                <h3>My First Program</h3>
+                <p>10 FOR X = 1 TO 255</p>
+                <p>20 PRINT X</p>
+                <p>30 NEXT X</p>
+                <p>RUN</p>
             </div>
             <div class="col-sm-4">
-                <h3>Column 3</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+                <h3>Run the Program</h3>
+                <button type="button" class="btn btn-primary"
+                        onclick="document.getElementById('demo2').innerHTML = countTo()">
+                    Display numbers
+                </button>
+                <p id="demo2"></p>
             </div>
         </div>
     </div>
@@ -54,18 +69,10 @@
         Click me to display Date and Time.
     </button>
 
-    <button type="button" class="btn btn-primary"
-            onclick="document.getElementById('demo2').innerHTML = countTo()">
-        Display numbers
-    </button>
+
 
     <p id="demo"></p>
 
-    <p id="demo2"></p>
-
-    <script src="first.js" type="text/javascript" >
-        alert("Hello World");
-    </script>
     </body>
 </html>
 </html>
