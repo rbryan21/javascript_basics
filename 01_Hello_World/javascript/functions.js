@@ -1,5 +1,6 @@
 
 
+// Original program
 function countTo() {
     var text = "";
     for (var i = 1; i <= 255; i++) {
@@ -8,7 +9,7 @@ function countTo() {
     return text;
 }
 
-
+// Change the picture based on selection from computerDropDown
 function setPicture() {
     var dropDown = document.getElementById("computerDropDown");
     var value = dropDown.options[dropDown.selectedIndex].value;

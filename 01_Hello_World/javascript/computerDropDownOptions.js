@@ -1,5 +1,5 @@
 var cocoTypes = ["Original Color Computer", "Color Computer 2", "Color Computer 3"];
-var cocoImages = ["300px-TRS-80_Color_Computer_1_front_right.jpg","images.jpeg","tandy-coco-3.jpg"];
+var cocoImages = ["tandy-coco-1.jpg","images.jpeg","tandy-coco-3.jpg"];
 
 select = document.getElementById('computerDropDown');
 
