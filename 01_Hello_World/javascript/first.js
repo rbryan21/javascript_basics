@@ -1,5 +1,4 @@
 
-console.log("This is the first file");
 
 function countTo() {
     var text = "";
@@ -11,9 +10,8 @@ function countTo() {
 
 
 function setPicture() {
-    var dropdown = document.getElementById("computerDropDown");
-    var value = dropdown.options[dropdown.selectedIndex].value;
-    alert(value);
+    var dropDown = document.getElementById("computerDropDown");
+    var value = dropDown.options[dropDown.selectedIndex].value;
 
     var img = document.getElementById("computerCocoImage");
     img.src = value;

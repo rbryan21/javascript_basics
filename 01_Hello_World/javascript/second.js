@@ -6,7 +6,7 @@ select = document.getElementById('computerDropDown');
 // Populate the option tags for the select
 for (var counter = 0; counter < cocoTypes.length; counter++) {
     var opt = document.createElement('option');
-    opt.value = cocoImages[counter];
+    opt.value = "images/" + cocoImages[counter];
     opt.innerHTML = cocoTypes[counter];
     select.appendChild(opt);
 }
