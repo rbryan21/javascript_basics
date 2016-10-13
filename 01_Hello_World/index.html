@@ -1,13 +1,82 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
+
 <html>
-  <head>
-    <script>
-      // JavaScript function definition here
-    </script> 
-  </head>
-  
-  <body>
-    <!-- Your page here (can include more script tags) -->
-    
-  </body>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>This is a test</title>
+        
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        
+        <!-- Inserting the script to reference jQuery here -->
+        <script src="jquery-3.1.1.min.js"></script>
+        
+        <!-- Inserting the script to reference jQueryUI here -->
+        <script src="jquery-ui.js"></script>
+        
+        <!-- Inserting the script to reference array.js here -->
+        
+        
+        <!-- inserting the script to display "I have the best words." in the content div -->
+        <script>
+        $("document").ready(function()
+        {
+        	$("#content").append("<p><b>I have the best words.</b></p>")
+        })
+        </script>
+     
+     	<!-- Function that allows two buttons to hide and show a specific div -->
+  		<script>
+		$(document).ready(function()
+			{
+    			$("#hide").click(function()
+    				{
+        				$("#content").hide();
+    				});
+    			$("#show").click(function()
+    			{
+        			$("#content").show();
+    			});
+			});
+		</script>
+		
+		<!-- Moves the image -->
+		<script>
+		$(document).ready(function() 
+			{
+    			$("#trumpedUp").animate({left: "+=500"}, 2000);
+    			$("#trumpedUp").animate({left: "-=300"}, 1000);
+		});
+		</script>
+        
+    </head>
+   
+    <body>
+        <h1 id="LogoHeader">Ooooooh yeaaaaah</h1>
+        
+        <div id="content"><p>So many words...</p></div>
+        
+        <div class="widget">
+  			<h3>Magical Buttons</h3>
+			<button id="hide">Hide the Best Words</button>
+			<button id="show">Show the Best Words</button>
+		</div>
+		
+		<!-- Didn't complete this in time, used an alert() instead. 
+		<div id="loop">
+        	<p>What 500 multiplied by 5?</p>
+        	<button id="answer">Answer</button>
+        </div>
+        -->
+        
+        <div id="trumpedUp" style="position:absolute; top:280px">
+        	<img src="thebestwords.png"/>
+        </div>
+        
+        <audio controls autoplay>
+  		<source src="returnofthemack.mp3" type="audio/mpeg">
+		</audio>
+        
+        <script src="array.js"></script>
+        
+    </body>
 </html>
