@@ -19,7 +19,7 @@ $(document).ready(function () {
     });
         
     $("#btn3").click(function () {
-        var input = $("#input_1").text();
+        var input = $("#input_1").val();
         names.push(input);
        
     });
