@@ -1,13 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script>
-      // JavaScript function definition here
-    </script> 
+    <title>Stranger Things Quiz- Hailey Montgomery</title>
+    
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   
   <body>
-    <!-- Your page here (can include more script tags) -->
+    <div id="centerContent">
+      <img id="logo" src="images/logo.png" alt="Stranger Things"><br>
+      <img id="demog" src="images/demog.jpg" alt="Demog">
+      <h1 id="title">Interesting Fact about Stranger Things from Netflix</h1>
+      <p id="demo"></p>
+
+        <script>
+        var text = "";
+        var i;
+        for (i = 0; i < 5; i++) {
+            text += "The Upside Down Exists!" + "<br>";
+        }
+        document.getElementById("demo").innerHTML = text;
+        </script>
+    </div>
     
   </body>
+  <script src="function.js"></script>
 </html>

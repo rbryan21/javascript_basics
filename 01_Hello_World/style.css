@@ -1,0 +1,33 @@
+@import 'https://fonts.googleapis.com/css?family=Lora';
+
+body
+{
+    background-color: #000;
+}
+
+h1
+{
+    color: #9F0E11;
+    font-family: 'Lora', serif;
+    text-shadow: 2px 2px 8px #A12515;
+}
+
+#centerContent
+{
+	text-align:center;
+}
+
+#demog {
+    height: 20%;
+    width: 150px;
+    position: absolute;
+}
+
+#demo
+{
+    color: #9F0E11;
+    text-align: center;
+    font-family: 'Lora', serif;
+    text-shadow: 2px 2px 8px #A12515;
+    font-size: 130%;
+}
