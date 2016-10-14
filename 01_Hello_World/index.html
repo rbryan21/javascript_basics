@@ -1,13 +1,32 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <script>
-      // JavaScript function definition here
-    </script> 
-  </head>
-  
-  <body>
-    <!-- Your page here (can include more script tags) -->
+ <head>
+      <script>
+        // JavaScript function definition here
+		// used http://www.w3schools.com/js/js_loop_while.asp as reference for help.
+ 	  
+ 	  function assignment5()
+ 	  {
+ 		var sorted = ["Indian","Italian","Mexican","Chinese","Thai"].sort();
+ 		var shown = "";
+ 	for(var i = 0; i < sorted.length; i++)
+ 		{
+ 			shown += sorted[i] + "<br>"; 
+ 		}
+ 		document.getElementById("foodILove").innerHTML = shown;
+ 	  }
+      </script> 
+    </head>
     
-  </body>
-</html>
+    <body>
+      <!-- Your page here (can include more script tags) -->
+    
+ 	<div style = "text-align: Left">
+ 		<h1 id = "foodILove">
+ 			favorite food 
+ 		</h1>
+ 		 <input type="button" value = "TEST" onclick="assignment5();" /> 
+ 	     </div>
+	 
+	 </body>
+	
+  </html>
+ 
