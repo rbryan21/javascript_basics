@@ -13,7 +13,7 @@ var score = 0,
   currentQuestion = 0,
   submitted = true;
 
-//define html elements
+//html elements
 
 var content = $("content"),
   questionContainer = $("question"),
@@ -105,7 +105,7 @@ function showFinalResults() {
   content.innerHTML = "<h1" + " id='Final-Results'>Score: " + score + " right out of " + questions.length + " possible.</h1>";
   var againButton = document.createElement("BUTTON");
   content.appendChild(againButton);
-  againButton.textContent = "Wanna Try Again?";
+  againButton.textContent = "Would you like to Try Again?";
 
   againButton.addEventListener("click", function() {
     currentQuestion = 0;
