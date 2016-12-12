@@ -1,13 +1,53 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
+    <script
+            src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+          crossorigin="anonymous">
     <script>
-      // JavaScript function definition here
-    </script> 
-  </head>
-  
-  <body>
-    <!-- Your page here (can include more script tags) -->
-    
-  </body>
+        function changeWords() {
+            var words = [
+                    "I told you not to click it!",
+                    "This is going into your permanent record!",
+                    "This is not just any button.",
+                    "Go read a book or something",
+                    "o.O",
+                    "Darn noobs...",
+                    "You're going to crash the browser!",
+                    "Now you've done it.",
+                    "It were you wot done it!"
+            ]
+            var wordsLen = words.length;
+            var rotate = Math.floor(Math.random() * 9999);
+            for (var i = 0; i < rotate; i++) {
+                document.getElementById("messages").innerHTML =
+                        document.getElementById("messages").innerHTML +
+                        " " +(i.toString());
+            }
+            document.getElementById("btn1").innerHTML = rndWord();
+            document.body.style.backgroundColor = "black";
+            document.body.style.color = "green";
+            function rndWord() {
+                return words [Math.floor(Math.random() * wordsLen)];
+            }
+        }
+    </script>
+</head>
+
+<body class="container">
+<div class="jumbotron" style="color: black" id="warn"><h1>Warning:</h1>
+    <h2>Do not click the button below this message.</h2>
+</div>
+<div>
+    <button class="btn btn-danger btn-lg" type="button" id="btn1"
+            onclick="changeWords()">Do not click this button</button>
+    <div id="messages"></div>
+</div>
+</body>
 </html>
