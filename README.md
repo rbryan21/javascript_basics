@@ -1,2 +1,2 @@
 # javascript_basics
-Completed Assignment 5
+JavaScript basics assignments for my students
