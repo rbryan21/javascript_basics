@@ -1,41 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-	<script>
-	window.onload = function() {
-		function howMany(selectObject) {
-	  		var numberSelected = 0;
-	  		for (var i = 0; i < selectObject.options.length; i++) {
-	    		if (selectObject.options[i].selected) {
-	      			numberSelected++;
-	    		}
-	  		}
-	  		return numberSelected;
-		}
-
-		var btn = document.getElementById("btn");
-		btn.addEventListener("click", function(){
-	  		alert('Number of favorite sports: ' + howMany(document.selectForm.favoriteSports));
-		});
-	};
-	</script>
+    <script>
+      // JavaScript function definition here
+    </script> 
   </head>
   
   <body>
-	<form name="selectForm">
-  	<p>
-	    <label for="favoriteSports">Choose your favorite sports then select the button below: </label>
-	    <select id="favoriteSports" name="favoriteSports" multiple="multiple">
-	      <option selected="selected">Baseball</option>
-	      <option value="Football">Football</option>
-	      <option>Soccer</option>
-	      <option>Golf</option>
-	      <option>Basketball</option>
-	      <option>Tennis</option>
-	    </select>
-	    <p>Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.</p>
-  	</p>
-  	<p><input id="btn" type="button" value="How many favorite sports do you have?" /></p>
-	</form>
+    <!-- Your page here (can include more script tags) -->
+    
   </body>
 </html>
