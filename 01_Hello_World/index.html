@@ -1,13 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <script>
-      // JavaScript function definition here
-    </script> 
+   <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+   <script src="js/bootstrap.min.js"></script>
   </head>
-  
+   
+      
   <body>
+  	<h1>Hello guys</h1>
+
+    <a id="click-me" href="">Choose your favorite names!</a>
+    <br>
+
     <!-- Your page here (can include more script tags) -->
-    
+    <script type ="text/javascript">
+      
+      var names = new Array(4);
+
+      for (i = 0; i < 4; i++) {	
+      	names[i] = prompt("Add names to Array:", " ");
+
+      }
+      document.write(names[0] + "<br>" + names[1] + "<br> " + names[2] + "<br> " + names[3]);
+  
+    </script> 
+
+
+<script src="js/script.js"></script>
   </body>
 </html>
