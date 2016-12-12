@@ -1,81 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
-  	</script>
-  <script>
+    <script>
       // JavaScript function definition here
-      function changeAwayScore() {
-      	document.getElementById("awayScore").innerHTML = Math.floor((Math.random() * 5) + 1);
-      }
-
-      function changeHomeScore() {
-      	document.getElementById("homeScore").innerHTML = Math.floor((Math.random() * 5) + 1);
-      }
-
-      var teams = ["Chicago Blackhawks vs St. Louis Blues", "Toronto Maple Leaves vs Ottawa Senators", "Edmonton Oilers vs Calgary Flames", "L.A. Kings vs San Jose Sharks"];
-
-	  var teamsList = ["Chicago Blackhawks", "St. Louis Blues", "Toronto Maple Leaves", "Ottawa Senators", "Edmonton Oilers", "Calgary Flames", "L.A. Kings", "San Jose Sharks"];
-
-      function changeTeams() {
-      	document.getElementById("teamsplaying").innerHTML = teams[Math.floor(Math.random() * teams.length)];
-      }
-	  var i; 
-	  var length = teamsList.length;
-	  var text = "";
-	  var rank = 1;
-      for (i = 0; i < length; i++) {
-      		text += rank++ + ". " + teamsList[i] + "<br>";
-      }
-
-      function standings() {
-      	document.getElementById("standingsList").innerHTML = text;
-      }
-
-  </script> 
-  <style type="text/css">
-  		p {
-  			font-size: 1em;
-  		}
-  </style>
+    </script> 
   </head>
   
   <body>
-  <header>
-  	<h1 align="center">NHL Scores Of The Day</h1>
-  </header>
+    <!-- Your page here (can include more script tags) -->
     
-  	<br>
-
-
-	<h3 align="center"><span id="homeScore">0</span> - <span id="awayScore">0</span></h3>
-
-	<h3 id="teamsplaying" align="center">none</h3>
-
- 	<div class="btn-group btn-group-justified" role="group" aria-label="..." align="center">
-  		<div class="btn-group" role="group">
-   			<button type="button" class="btn btn-default" onclick="changeAwayScore(); changeHomeScore();">
-   				<span class="glyphicon glyphicon-flash" aria-hidden="true"></span> scores
-   			</button>
-  		</div>
-  		<div class="btn-group" role="group">
-    		<button type="button" class="btn btn-default" onclick="changeTeams()">
-    		<span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Games
-    		</button>
-  		</div>
-  		<div class="btn-group" role="group">
-    		<button type="button" class="btn btn-default" onclick="standings()">
-    		<span class="glyphicon glyphicon-align-center" aria-hidden="true"></span> Standings
-    		</button>
-  		</div>
-	</div>
-
-	<br>
-
-	<h2 align="center">Standings</h2>
-	<p id="standingsList" align="center"> Standings </p>
-
   </body>
 </html>
