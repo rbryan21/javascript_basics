@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css?family=Droid+Serif');
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css');
+
+body {
+  font-family: $font-primary;
+  font-size: 1.4rem;
+  line-height: 160%;
+  // background-color: $background;
+  color: #000;
+} // body
+
+#{headings()} {
+  font-family: $font-secondary;
+  font-size: 1.2rem;
+  font-weight: lighter;
+  color: $lightgrey;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: normal;
+  color: #fff;
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: lighten($lightgrey, .5);
+}
+
+h3 {
+  font-size: 1rem;
+  margin-bottom: 30px;
+  border-bottom: 1px solid lighten($lightgrey, .3);
+  padding-bottom: 6px;
+}
+
+h4 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+h6 {
+  color: #000;
+}
+
+a {
+  text-decoration: none;
+  color: $pantonePurple;
+  font-size: 1.4rem;
+
+  &:hover {
+    color: $pantoneGreen;
+  }
+}
+
+p {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
