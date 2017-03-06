@@ -5,12 +5,100 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="build/css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="build/js/scripts.min.js"></script> 
+    <!--<script src="build/js/scripts.min.js"></script> -->
   </head>
   
   <body>
     <!-- Your page here (can include more script tags) -->
+    <div>
+      <h1>Gorillaz Trivia!</h1>
+    </div>
+
+    <div id="questions">
+    </div>
+
+    <script>
+var questions = [
+    {
+        "id" : 1,
+        "image" : "",
+        "question" : "The Gorillaz are a British virtual band which consists of four animated members: 2D, Noodle, Murdoc Niccals, and Russel Hobbs",    
+        "answers" : ['True', 'False'],
+        "correct-answer" : 0
+    }, {
+        "id" : 2,
+        "image" : "",
+        "question" : "The Gorillaz named one of their most popular songs after this famous male actor: ",
+        "answers" : ['Tom Cruise', 'Clint Eastwood', 'John Travolta', 'Pierce Brosnan'],
+        "correct-answer" : 1
+    }, {
+        "id" : 3,
+        "image" : "",
+        "question" : "Who is the animated lead singer of Gorillaz?",
+        "answers" : ['Noodle', 'Murdoc Niccals', '2D', 'Russel Hobbs'],
+        "correct-answer" : 2   
+    }, {
+        "id" : 4,
+        "image" : "",
+        "question" : "Who is a non-virtual creator of Gorillaz?",
+        "answers" : ['Damon Albarn', 'Timothy LePage', 'Henry Rein', 'Kyle Turner'],
+        "correct-answer" : 0  
+    }, {
+        "id" : 5,
+        "image" : "",
+        "question" : "Which of the following are characteristic of Gorillaz?",
+        "answers" : [
+          'Their music blurs the lines between genres', 
+          "They are the 'Most Successful Virtual Band' within the 'Guinness Book of World Records'", 
+          "They were created by Damon Albarn and Jamie Hewlett in 1998 in Essex, England.",
+          "All of the above!"
+        ],
+        "correct-answer" : 3   
+    }
+];
+
+var answerLetterArray = ['A', 'B', 'C', 'D'];
+
+      $(document).ready(function() {
+        populateQuestions();
+          function populateQuestions() {
+            var target = document.getElementById('questions');
+            questions.forEach(function(question) {
+            var questionParagraph;
+            var questionDiv = document.createElement('div');
+            $(questionDiv).addClass("question");
+
+            // Question text
+            var questionText = document.createElement('div');
+            $(questionText).addClass("questionText");
+            questionText.innerHTML = question.question;
+
+            var answersList = document.createElement('ul');
+            $(answersList).addClass("answers");
+            // Question answers
+            var answerCounter = 0; // reset counter
+            question.answers.forEach(function(answer) {
+                var answerText = document.createElement('div');
+                var listItem = document.createElement('li');
+                var answerLetter = document.createElement('span');
+                answerLetter.innerHTML = answerLetterArray[answerCounter++];
+                $(answerLetter).addClass("answerLetter");
+                $(answerText).addClass("answerText");
+                answerText.innerHTML = answer;
+
     
+                answerText.prepend(answerLetter);
+                listItem.appendChild(answerText);
+                answersList.appendChild(listItem);
+            });
+
+            questionDiv.appendChild(questionText);
+            questionDiv.appendChild(answersList);
+            target.appendChild(questionDiv);
+          });
+        }
+      });
+    </script>
   
   </body>
 </html>

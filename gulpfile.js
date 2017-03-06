@@ -1,10 +1,10 @@
 'use strict';
 
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
-var sourcemaps = require('gulp-sourcemaps');
+var gulp = require('gulp'),
+    sass = require('gulp-sass'),
+    concat = require('gulp-concat'),
+    uglify = require('gulp-uglify'),
+    sourcemaps = require('gulp-sourcemaps');
 
 var paths = {
   sass: 'devSASS/*.scss',
@@ -31,4 +31,4 @@ gulp.task('watch', function() {
     gulp.watch(paths.scripts, ['scripts']);
 });
 
-gulp.task('default', ['watch', 'sass', 'scripts']);
+gulp.task('default', ['sass', 'scripts', 'watch']);
