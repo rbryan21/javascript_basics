@@ -1,0 +1,26 @@
+{
+  "name": "javascript_basics",
+  "version": "1.0.0",
+  "description": "JavaScript basics assignments for my students",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rbryan21/javascript_basics.git"
+  },
+  "author": "Robert Bryan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rbryan21/javascript_basics/issues"
+  },
+  "homepage": "https://github.com/rbryan21/javascript_basics#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.4.1",
+    "gulp-uglify": "^2.0.1"
+  }
+}
