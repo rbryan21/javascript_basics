@@ -14,6 +14,12 @@ $(document).ready(function() {
             $("#questions").addClass("hidden");
             $("#scoreScreen").removeClass("hidden");
         });
+
+        $('#tryAgain').click(function() {
+            document.getElementById("questions").reset(); // reset questions
+            $("#scoreScreen").addClass("hidden");
+            $("#questions").removeClass("hidden");
+        });
 });
 
 messageArray = [
@@ -41,6 +47,9 @@ function getMessage(score) {
             break;
         case 1:
             return messageArray[4];
+            break;
+        case 0:
+            return messageArray[5];
             break;
         default:
             console.log("invalid score");
