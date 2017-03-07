@@ -12,7 +12,7 @@ var paths = {
 };
 
 gulp.task('sass', function() {
-    return gulp.src(paths.sass)
+    return gulp.src('devSASS/styles.scss')
         .pipe(sass({ outputStyle: 'compressed'}).on('error', sass.logError))
         .pipe(gulp.dest('./01_Hello_World/build/css'))
 });

@@ -1,85 +1,117 @@
+// On document load, populate questions
+$(document).ready(function() {
+        populateQuestions(); 
+});
+    
 // Create variable holding the questions
 var questions = [
     {
         "id" : 1,
         "image" : "",
         "question" : "The Gorillaz are a British virtual band which consists of four animated members: 2D, Noodle, Murdoc Niccals, and Russel Hobbs",    
-        "answers" : {
-            "A" : "True",
-            "B" : "False"
-        },
-        "correct-answer" : "A"
+        "answers" : ['True', 'False'],
+        "correct-answer" : 0
     }, {
         "id" : 2,
         "image" : "",
         "question" : "The Gorillaz named one of their most popular songs after this famous male actor: ",
-        "answers" : {
-            "A" : "Tom Cruise",
-            "B" : "Clint Eastwood",
-            "C" : "John Travolta",
-            "D" : "Pierce Brosnan"
-        },
-        "correct-answer" : "B"
+        "answers" : ['Tom Cruise', 'Clint Eastwood', 'John Travolta', 'Pierce Brosnan'],
+        "correct-answer" : 1
     }, {
         "id" : 3,
         "image" : "",
         "question" : "Who is the animated lead singer of Gorillaz?",
-        "answers" : {
-            "A" : "Noodle",
-            "B" : "Murdoc Niccals",
-            "C" : "2D",
-            "D" : "Russel Hobbs"
-        },
-        "correct-answer" : "C"   
+        "answers" : ['Noodle', 'Murdoc Niccals', '2D', 'Russel Hobbs'],
+        "correct-answer" : 2   
     }, {
         "id" : 4,
         "image" : "",
         "question" : "Who is a non-virtual creator of Gorillaz?",
-        "answers" : {
-            "A" : "Damon Albarn",
-            "B" : "Timothy LePage",
-            "C" : "Henry Rein",
-            "D" : "Kyle Turner"
-        },
-        "correct-answer" : "A"   
+        "answers" : ['Damon Albarn', 'Timothy LePage', 'Henry Rein', 'Kyle Turner'],
+        "correct-answer" : 0  
     }, {
         "id" : 5,
         "image" : "",
         "question" : "Which of the following are characteristic of Gorillaz?",
-        "answers" : {
-            "A" : "Their music blurs the lines between genres.",
-            "B" : "They are the 'Most Successful Virtual Band' within the 'Guinness Book of World Records'",
-            "C" : "They were created by Damon Albarn and Jamie Hewlett in 1998 in Essex, England.",
-            "D" : "All the above!"
-        },
-        "correct-answer" : "D"   
+        "answers" : [
+          'Their music blurs the lines between genres', 
+          "They are the 'Most Successful Virtual Band' within the 'Guinness Book of World Records'", 
+          "They were created by Damon Albarn and Jamie Hewlett in 1998 in Essex, England.",
+          "All of the above!"
+        ],
+        "correct-answer" : 3   
     }
 ];
 
-// Populate questions id 
+// Array to hold letters for answers
+var answerLetterArray = ['A', 'B', 'C', 'D'];
 
 function populateQuestions() {
+
     var target = document.getElementById('questions');
-    questions.forEach(function(question) {
-        var question = document.createElement('div');
-        question.addClass("question");
+    
+    /*
+        <div class="question">
+            <div class="questionText>
+                <ul class="answers>
+                </ul>
+            </div>
+        </div>
+    */
+    questions.forEach( function(question) {
+
+        var questionParagraph;
+        var questionDiv = document.createElement('div');
+
 
         // Question text
-        var questionText = document.createElement('p');
-        questionText.addClass("questionText");
+        var questionText = document.createElement('div');
+        
+        questionText.innerHTML = question.question;
 
-        // Question answers
+        var answersList = document.createElement('ul');
+        
+        
+       /* Creates
+                <li class="answerChoice">
+                    <div class="answerText">
+                        <span class="answerLetter> answerLetterArray[answerCounter++] </span>
+                        answer text
+                    </div>
+                </li>
+
+                For each answer to the question
+        */
+        var answerCounter = 0; // reset answers counter
         question.answers.forEach(function(answer) {
-            var questionParagraph = document.createElement('p');
-            var questionSpan = document.createElement('span');
-            questionParagraph.appendChild(questionSpan);
+
+            // Create elements
+            var answerText = document.createElement('div');                
+            var listItem = document.createElement('li');
+            var answerLetter = document.createElement('span');
+
+            answerLetter.innerHTML = answerLetterArray[answerCounter++];
+            answerText.innerHTML = answer;
+
+            answerText.prepend(answerLetter);
+            listItem.appendChild(answerText);
+            answersList.appendChild(listItem);
+
+            $(answerLetter).addClass("answerLetter");
+            $(answerText).addClass("answerText");
+            $(listItem).addClass("answerChoice");
         });
 
-        questionText.appendChild(questionParagraph);
-        question.appendChild(questionText);
-        target.appendChild(question);
-    });
+        $(questionDiv).addClass("question");
+        $(questionText).addClass("questionText");
+        $(answersList).addClass("answers");
 
+        questionDiv.appendChild(questionText);
+        questionDiv.appendChild(answersList);
+        target.appendChild(questionDiv);
+    });
 }
+
+
     
 
