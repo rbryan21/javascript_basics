@@ -10,11 +10,141 @@
   
   <body>
     <!-- Your page here (can include more script tags) -->
-    <div>
-      <h1>Gorillaz Trivia!</h1>
+    <div class="container" id="startingScreen">
+      <h1>Welcome to Gorillaz Trivia!</h1>
+      <button class="btn btn-primary btn-lg" id="start-button">Start</button>
     </div>
-
-    <div id="questions" class="container">
-    </div>  
+    <form id="questions" class="hidden">
+      <div id="questions" class="form-group container">
+        <fieldset class="form-group question" id="question1">
+          <p class="answer-text">The Gorillaz are a British virtual band which consists of four animated members: 2D, Noodle, Murdoc Niccals, and Russel Hobbs</p>
+          <div class="form-check answer-choice">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input correctAnswer" name="optionsRadios">
+              True
+            </label>
+          </div>
+          <div class="form-check answer-choice">
+          <label class="form-check-label">
+              <input type="radio" class="form-check-input" name="optionsRadios">
+              False
+            </label>
+          </div>
+      </fieldset>
+      <fieldset class="form-group question" id="question2">
+          <p class="answer-text">The Gorillaz named one of their most popular songs after this famous male actor: </p>
+          <div class="form-check answer-choice">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input">
+              Tom Cruise
+            </label>
+          </div>
+          <div class="form-check answer-choice">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input correctAnswer">
+              Clint Eastwood
+              </label>
+          </div>
+          <div class="form-check answer-choice">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input">
+              John Travolta
+            </label>
+          </div>
+          <div class="form-check answer-choice">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input">
+              Pierce Brosnan
+            </label>
+          </div>
+      </fieldset>
+      <fieldset class="form-group question" id="question3">
+          <p class="answer-text">Who is the animated lead singer of Gorillaz?</p>
+          <div class="form-check answer-choice">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input">
+              Noodle
+            </label>
+          </div>
+          <div class="form-check answer-choice">
+          <label class="form-check-label">
+              <input type="radio" class="form-check-input">
+              Murdoc Niccals
+            </label>
+          </div>
+          <div class="form-check answer-choice">
+          <label class="form-check-label">
+              <input type="radio" class="form-check-input correctAnswer">
+              2D
+            </label>
+          </div>
+          <div class="form-check answer-choice">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input">
+              Russel Hobbs
+            </label>
+          </div>
+      </fieldset>
+      <fieldset class="form-group question" id="question4">
+          <p class="answer-text">Who is a non-virtual creator of Gorillaz?</p>
+          <div class="form-check answer-choice">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input correctAnswer">
+              Damon Albarn
+            </label>
+          </div>
+          <div class="form-check answer-choice">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input">
+              Timothy LePage
+            </label>
+          </div>
+          <div class="form-check answer-choice">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input">
+              Henry Rein
+            </label>
+          </div>
+          <div class="form-check answer-choice">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input">
+              Kyle Turner
+            </label>
+          </div>
+      </fieldset>
+      <fieldset class="form-group question" id="question5">
+          <p class="answer-text">Which of the following are characteristic of Gorillaz?</p>
+          <div class="form-check answer-choice">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input">
+              Their music blurs the lines between genres
+            </label>
+          </div>
+          <div class="form-check answer-choice">
+          <label class="form-check-label">
+              <input type="radio" class="form-check-input">
+              They are the 'Most Successful Virtual Band' within the 'Guinness Book of World Records'
+            </label>
+          </div>
+          <div class="form-check answer-choice">
+          <label class="form-check-label">
+              <input type="radio" class="form-check-input">
+              They were created by Damon Albarn and Jamie Hewlett in 1998 in Essex, England.
+            </label>
+          </div>
+          <div class="form-check answer-choice">
+          <label class="form-check-label">
+              <input type="radio" class="form-check-input correctAnswer">
+              All of the above!
+            </label>
+          </div>
+      </fieldset>
+      <button class="btn btn-primary" id="quizSubmit">Submit</button>
+      </div>
+    </form>
+    <div class="container hidden" id="scoreScreen">
+      <h2>Congratulations you scored <span id="userScore"></span>/5</h2>
+      <h3 id="scoreDescription"></h3>
+    </div>
   </body>
 </html>

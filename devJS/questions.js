@@ -1,115 +1,77 @@
-// On document load, populate questions
 $(document).ready(function() {
-        populateQuestions(); 
-});
-    
-// Create variable holding the questions
-var questions = [
-    {
-        "id" : 1,
-        "image" : "",
-        "question" : "The Gorillaz are a British virtual band which consists of four animated members: 2D, Noodle, Murdoc Niccals, and Russel Hobbs",    
-        "answers" : ['True', 'False'],
-        "correct-answer" : 0
-    }, {
-        "id" : 2,
-        "image" : "",
-        "question" : "The Gorillaz named one of their most popular songs after this famous male actor: ",
-        "answers" : ['Tom Cruise', 'Clint Eastwood', 'John Travolta', 'Pierce Brosnan'],
-        "correct-answer" : 1
-    }, {
-        "id" : 3,
-        "image" : "",
-        "question" : "Who is the animated lead singer of Gorillaz?",
-        "answers" : ['Noodle', 'Murdoc Niccals', '2D', 'Russel Hobbs'],
-        "correct-answer" : 2   
-    }, {
-        "id" : 4,
-        "image" : "",
-        "question" : "Who is a non-virtual creator of Gorillaz?",
-        "answers" : ['Damon Albarn', 'Timothy LePage', 'Henry Rein', 'Kyle Turner'],
-        "correct-answer" : 0  
-    }, {
-        "id" : 5,
-        "image" : "",
-        "question" : "Which of the following are characteristic of Gorillaz?",
-        "answers" : [
-          'Their music blurs the lines between genres', 
-          "They are the 'Most Successful Virtual Band' within the 'Guinness Book of World Records'", 
-          "They were created by Damon Albarn and Jamie Hewlett in 1998 in Essex, England.",
-          "All of the above!"
-        ],
-        "correct-answer" : 3   
-    }
-];
 
-// Array to hold letters for answers
-var answerLetterArray = ['A', 'B', 'C', 'D'];
-
-function populateQuestions() {
-
-    var target = document.getElementById('questions');
-    
-    /*
-        <div class="question">
-            <div class="questionText>
-                <ul class="answers>
-                </ul>
-            </div>
-        </div>
-    */
-    questions.forEach( function(question) {
-
-        var questionParagraph;
-        var questionDiv = document.createElement('div');
-
-
-        // Question text
-        var questionText = document.createElement('div');
-        
-        questionText.innerHTML = question.question;
-
-        var answersList = document.createElement('ul');
-        
-        
-       /* Creates
-                <li class="answerChoice">
-                    <div class="answerText">
-                        <span class="answerLetter> answerLetterArray[answerCounter++] </span>
-                        answer text
-                    </div>
-                </li>
-
-                For each answer to the question
-        */
-        var answerCounter = 0; // reset answers counter
-        question.answers.forEach(function(answer) {
-
-            // Create elements
-            var answerText = document.createElement('div');                
-            var listItem = document.createElement('li');
-            var answerLetter = document.createElement('span');
-
-            answerLetter.innerHTML = answerLetterArray[answerCounter++];
-            answerText.innerHTML = answer;
-
-            answerText.prepend(answerLetter);
-            listItem.appendChild(answerText);
-            answersList.appendChild(listItem);
-
-            $(answerLetter).addClass("answerLetter");
-            $(answerText).addClass("answerText");
-            $(listItem).addClass("answerChoice");
+        $("#start-button").click(function() {
+             $("#questions").removeClass("hidden");
+             $("#start-button").addClass("hidden");
         });
 
-        $(questionDiv).addClass("question");
-        $(questionText).addClass("questionText");
-        $(answersList).addClass("answers");
+        $('#questions').submit(function() {
+            event.preventDefault();
+            // Check answers
+            var score = getScore();
+            $("#userScore").html(score);
+            $("#scoreDescription").html(getMessage(score));
+            $("#questions").addClass("hidden");
+            $("#scoreScreen").removeClass("hidden");
+        });
+});
 
-        questionDiv.appendChild(questionText);
-        questionDiv.appendChild(answersList);
-        target.appendChild(questionDiv);
-    });
+messageArray = [
+    "You've got good taste in music, my friend! Nice job!",
+    "Soooo close! Nice try!",
+    "You did ok! Decent try!",
+    "Ah... well, you gave it your best shot.",
+    "You must've skipped some questions, right?",
+    "Did you even answer the questions?"
+];
+
+function getMessage(score) {
+    switch (score) {
+        case 5:
+            return messageArray[0];
+            break;
+        case 4:
+            return messageArray[1];
+            break;
+        case 3:
+            return messageArray[2];
+            break;
+        case 2:
+            return messageArray[3];
+            break;
+        case 1:
+            return messageArray[4];
+            break;
+        default:
+            console.log("invalid score");
+            break;
+    }
+}
+
+// Calculates user score by checking if the correct answer is checked
+function getScore() {
+    var score = 0;
+    var questions = document.getElementsByClassName("question");
+    for (var index = 0; index < questions.length; index++) {
+        var answers = questions[index].getElementsByClassName("answer-choice"); // list of answers
+        for (var index2 = 0; index2 < answers.length; index2++) {
+            var labels = answers[index2].getElementsByTagName("label");
+            for (var index3 = 0; index3 < labels.length; index3++) {
+                var answerInputs = labels[index3].getElementsByClassName('correctAnswer');
+                for (var index4 = 0; index4 < answerInputs.length; index4++) {
+                    if (answerInputs[index3].length !== 0) {
+                        if (answerInputs[index3].checked) {
+                            score++;
+                            continue;
+                        }
+                    }
+                }
+                
+               
+            }
+        }
+    }
+    return score;
 }
 
 
