@@ -11,7 +11,7 @@
   <body>
     <!-- Your page here (can include more script tags) -->
     <div class="container" id="startingScreen">
-      <h1>Welcome to Gorillaz Trivia!</h1>
+      <h1 id="title">Welcome to Gorillaz Trivia!</h1>
       <button class="btn btn-primary btn-lg" id="start-button">Start</button>
     </div>
     <form id="questions" class="hidden">
@@ -20,13 +20,13 @@
           <p class="answer-text">The Gorillaz are a British virtual band which consists of four animated members: 2D, Noodle, Murdoc Niccals, and Russel Hobbs</p>
           <div class="form-check answer-choice">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input correctAnswer" name="optionsRadios">
+              <input type="radio" class="form-check-input correctAnswer">
               True
             </label>
           </div>
           <div class="form-check answer-choice">
           <label class="form-check-label">
-              <input type="radio" class="form-check-input" name="optionsRadios">
+              <input type="radio" class="form-check-input">
               False
             </label>
           </div>
@@ -145,7 +145,7 @@
     <div class="container hidden" id="scoreScreen">
       <h2>Congratulations you scored <span id="userScore"></span>/5</h2>
       <h3 id="scoreDescription"></h3>
-      <button class="btn btn-primary" id="tryAgain">Play Again?</button>
+      <button class="btn btn-primary sharp" id="tryAgain">Play Again?</button>
     </div>
   </body>
 </html>

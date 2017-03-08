@@ -1,25 +1,53 @@
-body {
-    background-color: #7100B2;
-    color: #DDD;
-}
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+@import url('https://fonts.googleapis.com/css?family=Proza+Libre:400,500i');
 
-.container {
-    background-color: #7127B3;
-}
+@import 'variables';
+@import 'base';
+@import 'startingscreen';
+@import 'questions';
+@import 'scorescreen';
 
-.questionText {
-    font-size: 1.2em;
-}
+// .btn {
+//     padding: 14px 24px
+//     border: 0 none;
+//     font-weight: 700;
+//     letter-spacing: 1px;
+//     text-transform: uppercase;
+// }
+ 
+// .btn:focus, .btn:active:focus, .btn.active:focus {
+//     outline: 0 none;
+// }
+ 
+// .btn-primary {
+//     background: #1BBC9B;
+//     color: #ffffff;
+// }
+ 
+// .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+//     background: #2D3E50;
+// }
+ 
+// .btn-primary:active, .btn-primary.active {
+//     background: #007299;
+//     box-shadow: none;
+// }
 
-#startingScreen {
-  margin: auto;
-  text-align: center;
-  padding: 2em;
-}
+// .btn.sharp {
+//   border-radius:0;
+// }
 
-.hidden {
-  display: none;
-}
+
+
+// #startingScreen {
+//   margin: auto;
+//   text-align: center;
+//   padding: 2em;
+// }
+
+// .hidden {
+//   display: none;
+// }
 
 
 

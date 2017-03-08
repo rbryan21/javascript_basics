@@ -1,5 +1,8 @@
 $(document).ready(function() {
 
+        // Set initial radio button answer names
+        setNameAttributes();
+
         $("#start-button").click(function() {
              $("#questions").removeClass("hidden");
              $("#start-button").addClass("hidden");
@@ -20,8 +23,10 @@ $(document).ready(function() {
             $("#scoreScreen").addClass("hidden");
             $("#questions").removeClass("hidden");
         });
+        
 });
 
+// Create messages to display to user upon completion (vary based on the # of correct answers)
 messageArray = [
     "You've got good taste in music, my friend! Nice job!",
     "Soooo close! Nice try!",
@@ -31,6 +36,7 @@ messageArray = [
     "Did you even answer the questions?"
 ];
 
+// Returns the correct message for the score passed in
 function getMessage(score) {
     switch (score) {
         case 5:
@@ -81,6 +87,23 @@ function getScore() {
         }
     }
     return score;
+}
+
+// Sets a unique name (through a simple iterator) for the radio answer inputs for each question
+function setNameAttributes() {
+    var answerSetCount = 0;
+    var questions = document.getElementsByClassName("question");
+    for (var index = 0; index < questions.length; index++) {
+        var answers = questions[index].getElementsByClassName("answer-choice"); // list of answers
+        for (var index2 = 0; index2 < answers.length; index2++) {
+            var labels = answers[index2].getElementsByTagName("label");
+            for (var index3 = 0; index3 < labels.length; index3++) {
+                var input = labels[index3].getElementsByTagName("input");
+                input[0].setAttribute("name", "answerset" + answerSetCount);
+            }
+        }
+        answerSetCount++;
+    }
 }
 
 
