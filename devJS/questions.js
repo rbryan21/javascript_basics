@@ -23,7 +23,7 @@ $(document).ready(function() {
             $("#scoreScreen").addClass("hidden");
             $("#questions").removeClass("hidden");
         });
-        
+
 });
 
 // Create messages to display to user upon completion (vary based on the # of correct answers)
