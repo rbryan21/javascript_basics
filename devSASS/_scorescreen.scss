@@ -2,11 +2,16 @@
     margin: auto;
     text-align: center;
     padding-bottom: 2em;
+    font-family: 'Proza Libre', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 #scoreDescription {
-    padding: 1em;
-    font-family: 'Proza Libre', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding-top: 1.75em;
+    padding-bottom: 2em;
     font-size: 3em;
 }
 
+#userScore {
+    font-size: 2em;
+    font-style: bold;
+}

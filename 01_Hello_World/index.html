@@ -12,7 +12,7 @@
     <!-- Your page here (can include more script tags) -->
     <div class="container" id="startingScreen">
       <h1 id="title">Welcome to Gorillaz Trivia!</h1>
-      <button class="btn btn-primary btn-lg" id="start-button">Start</button>
+      <button class="btn btn-primary sharp btn-lg" id="start-button">Start</button>
     </div>
     <form id="questions" class="hidden">
       <div id="questions" class="form-group container">
@@ -32,7 +32,7 @@
           </div>
       </fieldset>
       <fieldset class="form-group question" id="question2">
-          <p class="answer-text">The Gorillaz named one of their most popular songs after this famous male actor: </p>
+          <p class="answer-text">One of the most popular Gorillaz songs is named after this famous male actor: </p>
           <div class="form-check answer-choice">
             <label class="form-check-label">
               <input type="radio" class="form-check-input">
@@ -134,18 +134,24 @@
           </div>
           <div class="form-check answer-choice">
           <label class="form-check-label">
+              <input type="radio" class="form-check-input">
+             They're an awesome band which you should definitely check out!
+            </label>
+          </div>
+          <div class="form-check answer-choice">
+          <label class="form-check-label">
               <input type="radio" class="form-check-input correctAnswer">
               All of the above!
             </label>
           </div>
       </fieldset>
-      <button class="btn btn-primary" id="quizSubmit">Submit</button>
+      <button class="btn btn-primary btn-lg sharp" id="quizSubmit">Submit</button>
       </div>
     </form>
     <div class="container hidden" id="scoreScreen">
-      <h2>Congratulations you scored <span id="userScore"></span>/5</h2>
+      <h2>You're final score is...<span id="userScore"></span>/5!!!</h2>
       <h3 id="scoreDescription"></h3>
-      <button class="btn btn-primary sharp" id="tryAgain">Play Again?</button>
+      <button class="btn btn-primary btn-lg sharp" id="tryAgain">Play Again?</button>
     </div>
   </body>
 </html>
