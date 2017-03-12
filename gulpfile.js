@@ -14,7 +14,7 @@ var paths = {
 gulp.task('sass', function() {
     return gulp.src('devSASS/styles.scss')
         .pipe(sass({ outputStyle: 'compressed'}).on('error', sass.logError))
-        .pipe(gulp.dest('./01_Hello_World/build/css'))
+        .pipe(gulp.dest('./site/build/css'))
 });
 
 gulp.task('scripts', function() {
@@ -23,7 +23,7 @@ gulp.task('scripts', function() {
             .pipe(uglify())
             .pipe(concat('scripts.min.js'))
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest('01_Hello_World/build/js'))
+        .pipe(gulp.dest('site/build/js'))
 });
 
 gulp.task('watch', function() {
